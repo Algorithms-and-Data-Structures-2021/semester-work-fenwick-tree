@@ -2,8 +2,20 @@
 
 // файл с определениями
 
+#include <iostream>
+#include "data_structure.hpp"
+
 namespace itis {
 
-  // здесь должны быть определения методов вашей структуры
+// Build Fenwick's tree
 
-}  // namespace itis
+  int *FenwickTree::PreProc() {
+    int *fw = new int[size_ + 1];
+    for (int i = 0; i <= size_; i++)
+      fw[i] = 0;
+
+    for (int i = 0; i < size_; i++)
+      FenwickTree::updateFW(fw, size_, i, data_[i]);
+
+    return fw;
+  } // namespace itis
