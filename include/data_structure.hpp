@@ -1,27 +1,25 @@
 #pragma once
 
-// Заголовочный файл с объявлением структуры данных
-
 namespace itis {
 
-  // Tip 1: объявите здесь необходимые структуры, функции, константы и прочее
-
-  // Пример: объявление константы времени компиляции в заголовочном файле
-  inline constexpr auto kStringConstant = "Hello, stranger!";
-
-  // Пример: объявление структуры с полями и методами
-  struct MyStructure {
+  struct FenwickTree {
    public:
-    int size_{0};
-    int capacity_{0};
     int* data_{nullptr};
+    int size_;
 
-    // Tip 2: На начальном этапе разработки структуры данных можете определения методов задавать в
-    // заголовочном файле, как только работа будет завершена, можно будет оставить здесь только объявления.
-
-    int size() const {
-      return size_;
+    FenwickTree(int* data, int n) {
+      this->size_ = n;
+      data_ = data;
     }
-  };
 
-}  // namespace itis
+    ~FenwickTree();
+
+    int *PreProc();
+
+    int getSumFromZero(int fw[], int i);
+
+    int getSum(int fw[], int l, int r);
+
+    static void updateFW(int fw[], int n, int i, int newVal);
+  };
+} // namespace itis
