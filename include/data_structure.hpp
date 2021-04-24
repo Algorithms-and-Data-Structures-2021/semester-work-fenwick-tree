@@ -1,5 +1,6 @@
 #pragma once
 
+#include <vector>
 namespace itis {
 
   struct FenwickTree {
@@ -14,12 +15,12 @@ namespace itis {
 
     ~FenwickTree();
 
-    int *PreProc();
+    std::vector<int> PreProc(std::vector<int> fw);
 
-    int getSumFromZero(int fw[], int i);
+    int getSumFromZero(std::vector<int> fw, int i);
 
-    int getSum(int fw[], int l, int r);
+    int getSum(std::vector<int> fw, int l, int r);//переделать вектор
 
-    static void updateFW(int fw[], int n, int i, int newVal);
+    static void updateFW(std::vector<int> fw, int n, int i, int newVal);
   };
 } // namespace itis

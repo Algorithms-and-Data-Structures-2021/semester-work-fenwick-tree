@@ -9,8 +9,8 @@ namespace itis {
 
   // Build Fenwick's tree
 
-  int *FenwickTree::PreProc() {
-    int *fw = new int[size_ + 1];
+  std::vector<int> FenwickTree::PreProc(std::vector<int> fw) {
+//    int *fw = new int[size_ + 1];
     for (int i = 0; i <= size_; i++)
       fw[i] = 0;
 
@@ -21,15 +21,15 @@ namespace itis {
   }
 
   //сумма элементов от l до r
-  int FenwickTree::getSum(int *fw, int l, int r) {
+  int FenwickTree::getSum(std::vector<int> fw, int l, int r) {
     if (l) {
       return getSumFromZero(fw, r) - getSumFromZero(fw, l - 1);
     } else {
       return getSumFromZero(fw, r);
     }
   }
-  //сумма элементов от 0 до x
-  int FenwickTree::getSumFromZero(int *fw, int i) {
+  //сумма элементов от 0 до i
+  int FenwickTree::getSumFromZero(std::vector<int> fw, int i) {
     int sum = 0;
     // Fenwick's index start from 1
     i++;
@@ -44,7 +44,7 @@ namespace itis {
   }
 
   //увеличение fx[i] на newVal
-  void FenwickTree::updateFW(int *fw, int n, int i, int newVal) {
+  void FenwickTree::updateFW(std::vector<int> fw, int n, int i, int newVal) {
     // Fenwick's index start from 1
     i++;
     while (i <= n) {
