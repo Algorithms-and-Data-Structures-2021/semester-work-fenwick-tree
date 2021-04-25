@@ -8,12 +8,12 @@ namespace itis {
    public:
     ~FenwickTree();
 
-    int getSumFromZero(vector<long> fw, int i);
+    int getSumFromZero(int fw[], int i);
 
-    int getSum(vector<long> fw, int l, int r);
+    int getSum(int fw[], int l, int r);
 
-    void updateFW(vector<long> fw, int n, int i, int newVal);
+    void updateFW(int fw[], int n, int i, int newVal);
 
-    vector<long> constructFenwick(vector<long> fw, int n);
+    int *constructFenwick(int fw[], int n);
   };
-}  // namespace itis
+} // namespace itis

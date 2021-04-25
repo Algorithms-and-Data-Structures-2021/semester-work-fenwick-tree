@@ -1,4 +1,3 @@
-
 // Created by Admin on 25.04.2021.
 //
 #include <fstream> // ifstream
@@ -20,9 +19,9 @@ static constexpr auto kProjectPath = string_view{PROJECT_SOURCE_DIR};
 
 int main(){
   const auto path = string(kDatasetPath);
-  cout <<"Path to the 'dataset/' folder: " << path << endl;
+  cout <<"Path to the 'dataset/' folder: "<< path << endl;
 
-  auto input_file = ifstream(path + "/getSum/data(100).csv");
+  auto input_file = ifstream(path + "/getSum/1/data(100).csv");
   int data[100];
   FenwickTree *fenwickTree;
 
@@ -30,17 +29,19 @@ int main(){
     int line_number = 0;
     for (string line; getline(input_file, line, ','); /* ... */) {
       auto ss = stringstream(line); // оборачиваем строку в объект "поток"
-      data.push_back(stoi(line));
+      for(int i = 0; i < sizeof(data); i++) {
+        data[i] = stoi(line);
+      }
       line_number++;
     }
   }
-  for (int i = 0; i < data.size(); i++) {
-    fenwickTree->constructFenwick(data, data.size());
+  for (int i = 0; i < sizeof(data); i++) {
+    fenwickTree->constructFenwick(data, sizeof(data));
   }
 
 
   const auto time_point_before = chrono::high_resolution_clock::now();
-  fenwickTree->updateFW(data, data.size(), 2, 7);
+  fenwickTree->getSumFromZero(data, 5);
   const auto time_point_after = chrono::high_resolution_clock::now();
 //heap.output();
 
