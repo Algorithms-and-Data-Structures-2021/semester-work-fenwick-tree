@@ -8,7 +8,9 @@ namespace itis {
    public:
     ~FenwickTree();
 
-    int getSum(vector<long> fw, int i);
+    int getSumFromZero(vector<long> fw, int i);
+
+    int getSum(vector<long> fw, int l, int r);
 
     void updateFW(vector<long> fw, int n, int i, int newVal);
 

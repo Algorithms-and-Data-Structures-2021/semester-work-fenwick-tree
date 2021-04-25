@@ -9,7 +9,6 @@
 #include <sstream> // stringstream
 #include <vector>
 
-// подключаем вашу структуру данных
 #include "data_structure.hpp"
 
 using namespace std;
@@ -24,7 +23,7 @@ int main(){
   cout <<"Path to the 'dataset/' folder: " << path << endl;
 
   auto input_file = ifstream(path + "/getSum/data(100).csv");
-  vector<long> data;
+  int data[100];
   FenwickTree *fenwickTree;
 
   if(input_file){

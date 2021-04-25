@@ -5,7 +5,7 @@ using namespace std;
 using namespace itis;
 
 // Return sum from 0...i from array
-int FenwickTree::getSum(vector<long> fw, int i) {
+int FenwickTree::getSumFromZero(vector<long> fw, int i) {
   int sum = 0;
   // Fenwick's index start from 1
   i++;
@@ -17,6 +17,14 @@ int FenwickTree::getSum(vector<long> fw, int i) {
     i -= i & (-i);
   }
   return sum;
+}
+
+int FenwickTree::getSum(vector<long> fw, int l, int r) {
+  if (l) {
+    return getSumFromZero(fw, r) - getSumFromZero(fw, l - 1);
+  } else {
+    return getSumFromZero(fw, r);
+  }
 }
 
 // newVal will be updated to Fenwick and all its ancestor
@@ -41,15 +49,15 @@ vector<long> FenwickTree::constructFenwick(vector<long> a, int n) {
   return fw;
 }
 
-//int main() {
-//  FenwickTree *fenwickTree;
-//  vector<long> a = {1, 2, 3, 4, 5, 6, 7};
-//  int n = sizeof(a) / sizeof(a[0]);
-//  vector<long> fw = fenwickTree->constructFenwick(a, n);
-//  cout << fenwickTree->getSum(fw, 4);
-//  a[3] += 7;
-//  fenwickTree->updateFW(fw, n, 3, 7);
-//  cout << "\nAfter update ";
-//  cout << fenwickTree->getSum(fw, 4) << "\n";
-//  return 0;
-//}
+int main() {
+  FenwickTree *fenwickTree;
+  vector<long> a = {1, 2, 3, 4, 5, 6, 7};
+  int n = sizeof(a) / sizeof(a[0]);
+  vector<long> fw = fenwickTree->constructFenwick(a, n);
+  cout << fenwickTree->getSumFromZero(fw, 4);
+  a[3] += 7;
+  fenwickTree->updateFW(fw, n, 3, 7);
+  cout << "\nAfter update ";
+  cout << fenwickTree->getSumFromZero(fw, 4) << "\n";
+  return 0;
+}
