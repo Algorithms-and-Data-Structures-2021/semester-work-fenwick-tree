@@ -21,7 +21,7 @@ int main(){
   const auto path = string(kDatasetPath);
   cout <<"Path to the 'dataset/' folder: "<< path << endl;
 
-  auto input_file = ifstream(path + "/getSum/1/data(100).csv");
+  auto input_file = ifstream(path + "/getSum//data(100).csv");
   int data[100];
   FenwickTree *fenwickTree;
 
@@ -41,9 +41,8 @@ int main(){
 
 
   const auto time_point_before = chrono::high_resolution_clock::now();
-  fenwickTree->getSumFromZero(data, 5);
+  fenwickTree->getSum(data, 4, 7);
   const auto time_point_after = chrono::high_resolution_clock::now();
-//heap.output();
 
 
 // переводим время в наносекунды
