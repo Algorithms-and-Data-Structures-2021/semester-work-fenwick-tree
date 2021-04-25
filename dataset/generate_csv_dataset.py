@@ -1,6 +1,6 @@
 from random import randint
 from os import mkdir
-ops = ('getSum', 'getSumFromZero', 'updateFW')
+ops = ('getSum', 'constructFenwick', 'updateFW')
 
 def values_generator(min_value: int = 0, max_value: int = 100000000):
     """Function to generate values for tests"""
