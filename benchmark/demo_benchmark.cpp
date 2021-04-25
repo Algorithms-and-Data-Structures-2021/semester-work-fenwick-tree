@@ -23,8 +23,8 @@ int main(){
   const auto path = string(kDatasetPath);
   cout <<"Path to the 'dataset/' folder: " << path << endl;
 
-  auto input_file = ifstream(path + "/merge/dataset-generated1000000.csv");
-  vector<int> data;
+  auto input_file = ifstream(path + "/getSum/data(100).csv");
+  vector<long> data;
   FenwickTree *fenwickTree;
 
   if(input_file){
@@ -35,13 +35,13 @@ int main(){
       line_number++;
     }
   }
-  for (int i = 0; i <data.size(); i++) {
-    fenwickTree->constructFenwick(data[i], data.size());//data[i] not work
+  for (int i = 0; i < data.size(); i++) {
+    fenwickTree->constructFenwick(data, data.size());
   }
 
 
   const auto time_point_before = chrono::high_resolution_clock::now();
-  fenwickTree->getSum(data, 5);
+  fenwickTree->updateFW(data, data.size(), 2, 7);
   const auto time_point_after = chrono::high_resolution_clock::now();
 //heap.output();
 

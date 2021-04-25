@@ -1,16 +1,17 @@
 #pragma once
 
 #include <vector>
+using namespace std;
 namespace itis {
 
   struct FenwickTree {
    public:
     ~FenwickTree();
 
-    int getSum(int fw[], int i);
+    int getSum(vector<long> fw, int i);
 
-    void updateFW(int fw[], int n, int i, int newVal);
+    void updateFW(vector<long> fw, int n, int i, int newVal);
 
-    int *constructFenwick(int a[], int n);
+    vector<long> constructFenwick(vector<long> fw, int n);
   };
 }  // namespace itis
