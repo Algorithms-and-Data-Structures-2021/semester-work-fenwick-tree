@@ -96,7 +96,9 @@ cmake .. -DCMAKE_BUILD_TYPE=RelWithDebInfo && cmake --config RelWithDebInfo --bu
 cd dataset
 
 # запуск Python-скрипта
-Для запуска генерации тестовых данных перейдте в класс generate_csv_dataset.py и запустите метод main() или перейде
+Для запуска генерации тестовых данных перейдте в класс generate_csv_dataset.py и запустите метод main() 
+или перейдите по ссылке:
+[Google Drive](https://drive.google.com/drive/folders/13HUCf5TdwEJQKBFji4icyDiecBpnk8SL).
 ```
 
 Тестовые данные представлены в txt формате (см.
