@@ -1,6 +1,5 @@
 #pragma once
 
-#include <vector>
 using namespace std;
 namespace itis {
 
@@ -16,4 +15,4 @@ namespace itis {
 
     int *constructFenwick(int fw[], int n);
   };
-} // namespace itis
+}  // namespace itis

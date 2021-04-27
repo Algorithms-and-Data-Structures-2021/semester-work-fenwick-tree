@@ -20,8 +20,7 @@
 - Теоретическая сложность операций :
    1.Построение и обновление за O(n log n) времени и O(n) памяти.
    2.Сумма элементов  в худшем случае требует порядка O(log N) времени.
-
-- https://en.wikipedia.org/wiki/Fenwick_tree
+  
 
 ## Команда "1Brain43"
 
@@ -94,12 +93,13 @@ cmake .. -DCMAKE_BUILD_TYPE=RelWithDebInfo && cmake --config RelWithDebInfo --bu
 ```shell
 # переход в папку генерации набора данных
 cd dataset
-
-# запуск Python-скрипта
+```
+#### запуск Python-скрипта
 Для запуска генерации тестовых данных перейдте в класс generate_csv_dataset.py и запустите метод main() 
 или перейдите по ссылке:
+
 [Google Drive](https://drive.google.com/drive/folders/13HUCf5TdwEJQKBFji4icyDiecBpnk8SL).
-```
+
 
 Тестовые данные представлены в txt формате (см.
 [`dataset/getSum/1/data(100).txt`](dataset/getSum/1/data(100).txt)):
@@ -158,9 +158,10 @@ dataset/
 ## Источники
 
 Список источников
-1.https://www.youtube.com/watch?v=4SNzC4uNmTA
-2.https://www.youtube.com/watch?v=BzFN9YwR-NM
-3.https://informatics.msk.ru/mod/book/view.php?id=491&chapterid=193
-4.https://neerc.ifmo.ru/wiki/index.php?title=%D0%94%D0%B5%D1%80%D0%B5%D0%B2%D0%BE_%D0%A4%D0%B5%D0%BD%D0%B2%D0%B8%D0%BA%D0%B0
-5.https://e-maxx.ru/algo/fenwick_tree
-6.https://static.aminer.org/pdf/PDF/001/073/976/a_new_data_structure_for_cumulative_frequency_tables.pdf
+1. https://www.youtube.com/watch?v=4SNzC4uNmTA
+2. https://www.youtube.com/watch?v=BzFN9YwR-NM
+3. https://informatics.msk.ru/mod/book/view.php?id=491&chapterid=193
+4. https://neerc.ifmo.ru/wiki/index.php?title=%D0%94%D0%B5%D1%80%D0%B5%D0%B2%D0%BE_%D0%A4%D0%B5%D0%BD%D0%B2%D0%B8%D0%BA%D0%B0
+5. https://e-maxx.ru/algo/fenwick_tree
+6. https://static.aminer.org/pdf/PDF/001/073/976/a_new_data_structure_for_cumulative_frequency_tables.pdf
+7. https://en.wikipedia.org/wiki/Fenwick_tree
